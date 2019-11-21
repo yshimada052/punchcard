@@ -8,12 +8,12 @@
 	<!--  -->
 	
 	<servlet>
-		<servlet-name></servlet-name>
-		<servlet-class></servlet-class>	
+		<servlet-name>timesheet</servlet-name>
+		<servlet-class>com.skillstorm.</servlet-class>	
 	</servlet>	
 	
 	<servlet-mapping>
-		<servlet-name></servlet-name>
+		<servlet-name>timesheet</servlet-name>
 		<url-pattern></url-pattern>	
 	</servlet-mapping>
 	
