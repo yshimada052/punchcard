@@ -50,7 +50,7 @@
 			</plugin>
 
 			<!-- Tomcat Maven Plugin  
-				Maven goal (build lifecycle
+				Maven goal (build lifecycle)
 			-->
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
@@ -66,7 +66,7 @@
 						<server>maven</server>
 						<!-- what path to deploy to tomcat, then would be 
 							available at your.aws.ip:8080/example  -->
-						<path>/punchard</path>
+						<path>/punchcard</path>
 					</configuration>
 				</plugin>
 		</plugins>
