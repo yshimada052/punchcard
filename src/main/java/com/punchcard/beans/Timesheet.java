@@ -9,125 +9,223 @@ package com.punchcard.beans;
  * exceeds 24 hours
  */
 
-import java.sql.Date;
+import java.util.Date;
 //import java.sql.SQLException;
 
 public class Timesheet {
-	private int TimesheetId;
-	private double MonHours;
-	private double TueHours;
-	private double WedHours;
-	private double ThuHours;
-	private double FriHours;
-	private double SatHours;
-	private double SunHours;
+	
+	private int timesheetId;
+	private int userId;
+	private int statusId;
+	private double monHours;
+	private double tueHours;
+	private double wedHours;
+	private double thuHours;
+	private double friHours;
+	private double satHours;
+	private double sunHours;
 	private Date weekEnding;
+	private Date approvedDate;
+	private int approverId;
+
 	public Timesheet() {
 		super();		
 	}
-	public Timesheet(int timesheetId, double monHours, double tueHours, double wedHours, double thuHours, double friHours,
-			double satHours, double sunHours, Date weekEnding) {
+	
+	
+	public Timesheet(int timesheetId, int userId, int statusId, double monHours, double tueHours, double wedHours,
+			double thuHours, double friHours, double satHours, double sunHours, Date weekEnding, Date approvedDate, int approverId) {
 		super();
-		TimesheetId = timesheetId;
-		MonHours = monHours;
-		TueHours = tueHours;
-		WedHours = wedHours;
-		ThuHours = thuHours;
-		FriHours = friHours;
-		SatHours = satHours;
-		SunHours = sunHours;
+		this.timesheetId = timesheetId;
+		this.userId = userId;
+		this.statusId = statusId;
+		this.monHours = monHours;
+		this.tueHours = tueHours;
+		this.wedHours = wedHours;
+		this.thuHours = thuHours;
+		this.friHours = friHours;
+		this.satHours = satHours;
+		this.sunHours = sunHours;
 		this.weekEnding = weekEnding;
+		this.approvedDate = approvedDate;
+		this.approverId = approverId;
 	}
 	
-	public Timesheet(int int1) {
-		// TODO Auto-generated constructor stub
+		
+	public Timesheet(int timesheetId, int userId, int statusId) {
+		super();
+		this.timesheetId = timesheetId;
+		this.userId = userId;
+		this.statusId = statusId;
 	}
+
+
 	public int getTimesheetId() {
-		return TimesheetId;
+		
+		return timesheetId;
 	}
+	
 	public void setTimesheetId(int timesheetId) {
-		TimesheetId = timesheetId;
+		
+		this.timesheetId = timesheetId;
 	}
+	
+	public int getUserId() {
+		
+		return userId;
+	}
+	
+	public void setUserId(int userId) {
+		
+		this.userId = userId;
+	}
+	
+	public int getStatusId() {
+		
+		return statusId;
+	}
+	
+	public void setStatusId(int statusId) {
+		
+		this.statusId = statusId;
+	}
+
+	public int getApproverId() {
+		
+		return approverId;
+	}
+
+	public void setApproverId(int approverId) {
+		
+		this.approverId = approverId;
+	}
+
 	public double getMonHours() {
-		if(MonHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return MonHours;
+		
+		return monHours;
 	}
+	
 	public void setMonHours(double monHours) {
-		MonHours = monHours;
+		
+		if(monHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.monHours = monHours;
 	}
+	
 	public double getTueHours() {
-		if(TueHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return TueHours;
+		
+		return tueHours;
 	}
+	
 	public void setTueHours(double tueHours) {
-		TueHours = tueHours;
+		
+		if(tueHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.tueHours = tueHours;
 	}
+	
 	public double getWedHours() {
-		if(WedHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return WedHours;
+		
+		return wedHours;
 	}
+	
 	public void setWedHours(double wedHours) {
-		WedHours = wedHours;
+		
+		if(wedHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.wedHours = wedHours;
 	}
+	
 	public double getThuHours() {
-		if(ThuHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return ThuHours;
+		
+		return thuHours;
 	}
+	
 	public void setThuHours(double thuHours) {
-		ThuHours = thuHours;
+		
+		if(thuHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.thuHours = thuHours;
 	}
+	
 	public double getFriHours() {
-		if(FriHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return FriHours;
+		
+		return friHours;
 	}
+	
 	public void setFriHours(double friHours) {
-		FriHours = friHours;
+		
+		if(friHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.friHours = friHours;
 	}
+	
 	public double getSatHours() {
-		if(SatHours > 24) {
-			throw new IllegalArgumentException();
-		}
-		return SatHours;
+		
+		return satHours;
 	}
+	
 	public void setSatHours(double satHours) {
-		SatHours = satHours;
-	}
-	public double getSunHours() {
-		if(SunHours > 24) {
+		
+		if(satHours > 24) {
 			throw new IllegalArgumentException();
 		}
-		return SunHours;
+		this.satHours = satHours;
 	}
+	
+	public double getSunHours() {
+		
+		return sunHours;
+	}
+	
 	public void setSunHours(double sunHours) {
-		SunHours = sunHours;
+		
+		if(sunHours > 24) {
+			throw new IllegalArgumentException();
+		}
+		this.sunHours = sunHours;
 	}
+	
 	public Date getWeekEnding() {
 		return weekEnding;
 	}
+	
 	public void setWeekEnding(Date weekEnding) {
 		this.weekEnding = weekEnding;
 	}
+	
+	
+
+	public Date getApprovedDate() {
+		return approvedDate;
+	}
+
+
+	public void setApprovedDate(Date approvedDate) {
+		this.approvedDate = approvedDate;
+	}
+
+
 //	@Override
 //	public String toString() {
-//		return "Timesheet [TimesheetId=" + TimesheetId + ", MonHours=" + MonHours + ", TueHours=" + TueHours
-//				+ ", WedHours=" + WedHours + ", ThuHours=" + ThuHours + ", FriHours=" + FriHours + ", SatHours="
-//				+ SatHours + ", SunHours=" + SunHours + ", weekEnding=" + weekEnding + "]";
+//		return "Timesheet [timesheetId=" + timesheetId + ", userId=" + userId + ", statusId=" + statusId + "]";
 //	}
-	
+
+
 	@Override
 	public String toString() {
-		return "Timesheet [TimesheetId=" + TimesheetId + "]";
+		return "Timesheet [timesheetId=" + timesheetId + ", userId=" + userId + ", statusId=" + statusId + ", monHours="
+				+ monHours + ", tueHours=" + tueHours + ", wedHours=" + wedHours + ", thuHours=" + thuHours
+				+ ", friHours=" + friHours + ", satHours=" + satHours + ", sunHours=" + sunHours + ", weekEnding="
+				+ weekEnding + ", approvedDate=" + approvedDate + ", approverId=" + approverId + "]";
 	}
+
+	
 	
 	
 }

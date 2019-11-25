@@ -13,12 +13,12 @@
 	
 	<servlet>
 		<servlet-name>timesheet</servlet-name>
-		<servlet-class>com.skillstorm.</servlet-class>	
+		<servlet-class>com.puchcard.controller.FrontController</servlet-class>	
 	</servlet>	
 	
 	<servlet-mapping>
 		<servlet-name>timesheet</servlet-name>
-		<url-pattern></url-pattern>	
+		<url-pattern>/api/*</url-pattern>	
 	</servlet-mapping>
 	
 </web-app>

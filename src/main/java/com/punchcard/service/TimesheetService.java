@@ -13,24 +13,24 @@ public class TimesheetService {
 		return timesheetDAO.findTimesheetById(id);
 	}
 
-//	public List<Timesheet> findAll() {
-//		return timesheetDAO.findAll();
-//	}
-//	
-//	public Timesheet save(Timesheet timesheet) {
-//		return timesheetDAO.save(timesheet);
-//	}
-//
-//	public Set<Timesheet> searchByName(String search) {
-//		return timesheetDAO.searchByName(search);
-//	}
-//
-//	public void update(Timesheet timesheet) {
-//		timesheetDAO.update(timesheet);
-//	}
-//
-//	public void delete(int id) {
-//		timesheetDAO.delete(id);
-//	}
-//
+	public List<Timesheet> findAll() {
+		return timesheetDAO.findAll();
+	}
+
+	public Timesheet save(Timesheet timesheet) {
+		return timesheetDAO.save(timesheet);
+	}
+//need to implement this method in TimesheetDAO class.
+	public Set<Timesheet> searchByName(String search) {
+		return timesheetDAO.searchByName(search);
+	}
+
+	public void update(Timesheet timesheet) {
+		timesheetDAO.update(timesheet);
+	}
+
+	public void delete(int id) {
+		timesheetDAO.delete(id);
+	}
+
 }
