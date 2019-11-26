@@ -15,20 +15,28 @@ public class User {
 	private String lastName;
 	private String userName;
 	private String password;
+	private int roleId;
+	private String jobTitle;
 	
 	
 	public User() {
 		super();
 	}
-	public User(int userId, String firstName, String lastName, String userName, String password) {
+	
+	
+	public User(int userId, String firstName, String lastName, String userName, String password, int roleId,
+			String jobTitle) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+		this.roleId = roleId;
+		this.jobTitle = jobTitle;
 	}
-	
+
+
 	public int getUserId() {
 		return userId;
 	}
@@ -60,11 +68,34 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName + ", password="
-				+ password + "]";
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", userName="
+				+ userName + ", password=" + password + ", roleId=" + roleId + ", jobTitle=" + jobTitle + "]";
 	}
+	
 
 
 }
