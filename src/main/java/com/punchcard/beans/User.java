@@ -24,6 +24,7 @@ public class User {
 	}
 	
 	
+	
 	public User(int userId, String firstName, String lastName, String userName, String password, int roleId,
 			String jobTitle) {
 		super();

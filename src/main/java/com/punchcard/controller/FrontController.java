@@ -19,13 +19,14 @@ import com.punchcard.data.TimesheetDAO;
 @WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
 	private TimesheetController timesheetController = new TimesheetController();
+	private LoginController loginController = new LoginController();
 	
 	protected void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		if(req.getRequestURI().contains("hello")) {
-			resp.getWriter().append("Timesheet API.");
-			resp.setStatus(200);
-		}
+//		if(req.getRequestURI().contains("hello")) {
+//			resp.getWriter().append("Timesheet API.");
+//			resp.setStatus(200);
+//		}
 		switch (uri) {
 		case "/punchcard/api/timesheet":
 			if (req.getMethod().equals("POST")) {
@@ -44,7 +45,13 @@ public class FrontController extends HttpServlet {
 				timesheetController.deleteTimesheet(req, resp);
 				return;
 			}
-
+		case "/punchcard":
+			if (req.getMethod().equals("POST")) {
+				loginController.getUser(req, resp);
+				return;
+			}
+				
+			
 		default:
 			break;
 		}
@@ -61,7 +68,7 @@ public class FrontController extends HttpServlet {
 		
 		out.println("Test");
 		
-		response.sendRedirect("http://localhost:8080/punchcard/index.html");
+		response.sendRedirect("http://localhost:8080/punchcard/main.html");
 		
 		TimesheetDAO ts  = new TimesheetDAO();
 		
