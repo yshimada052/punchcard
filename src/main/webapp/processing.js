@@ -1,6 +1,6 @@
-document.getElementById('add').addEventListener('submit', function(e){
+document.getElementById('login').addEventListener('submit', function(e){
     e.preventDefault();  //stops expecting a page refresh
-    let artist = {
+    let user = {
         name: document.getElementById('userId').value
     };
     
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
     //ajax call (XMLHttpRequest: xhr) to fetch artists
     var xhr = new XMLHttpRequest();
     //readystate 0
-    xhr.open('GET', 'http://localhost:8080/punchcard/api/');
+    xhr.open('POST', 'http://localhost:8080/punchcard/api/');
     //ready state 1
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState);
@@ -52,20 +52,19 @@ document.addEventListener('DOMContentLoaded', function(){
 ;
 
 function artistification(list){
-    for(let artist of list){
-        appendArtist(artist);
+    for(let user of list){
+        appendUser(user);
     }
 
 };
 
-function appendArtist(artist){
-    // template logic
+function appendArtist(user){
     let tr = document.createElement('tr');
     let id = document.createElement('td');
     id.innerText = artist.artistId;
     let name = document.createElement('td');
-    name.innerText = artist.name;
+    name.innerText = user.name;
     tr.appendChild(id);
-    tr.appendChild(name);
+    //tr.appendChild(name);
     document.getElementById('list').appendChild(tr);
 };

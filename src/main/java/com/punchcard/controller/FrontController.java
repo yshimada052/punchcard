@@ -45,7 +45,7 @@ public class FrontController extends HttpServlet {
 				timesheetController.deleteTimesheet(req, resp);
 				return;
 			}
-		case "/punchcard":
+		case "/punchcard/api/login":
 			if (req.getMethod().equals("POST")) {
 				loginController.getUser(req, resp);
 				return;
